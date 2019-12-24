@@ -113,9 +113,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 				<section id="plans">
 					<div class="container">
 						<div class="row">
-
 							<!-- item -->
-							<div class="col-md-4 text-center">
+							<div class="col-md-3 text-center">
+								<div class="panel panel-danger panel-pricing">
+									<div class="panel-heading">
+										<i class="fa fa-ticket"></i>
+										<h3>1<br>διαδρομή</h3>
+									</div>
+									<div class="panel-body text-center">
+										<p><strong>2€</strong></p>
+									</div>
+									<ul class="list-group text-center">
+										<li class="list-group-item"><i class="fa fa-check"></i> Προσωποποιημένη Κάρτα</li>
+										<li class="list-group-item"><i class="fa fa-check"></i> Online Ανανέωση</li>
+										<li class="list-group-item"><i class="fa fa-check"></i> Χρονικό όριο διαδρομής: 90 λεπτά</li>
+									</ul>
+									<div class="panel-footer">
+										<form style="color: #fff; margin-bottom:0px;" action="fortisi.php" method="post"><input type="hidden" name="diadromes" value="1"/><button class="btn btn-lg btn-block btn-success" type="submit">Απευθείας Αγορά</button></form>
+									</div>
+								</div>
+							</div>
+							<!-- /item -->
+						
+							<!-- item -->
+							<div class="col-md-3 text-center">
 								<div class="panel panel-danger panel-pricing">
 									<div class="panel-heading">
 										<i class="fa fa-ticket"></i>
@@ -137,7 +158,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 							<!-- /item -->
 
 							<!-- item -->
-							<div class="col-md-4 text-center">
+							<div class="col-md-3 text-center">
 								<div class="panel panel-warning panel-pricing">
 									<div class="panel-heading">
 										<i class="fa fa-ticket"></i>
@@ -159,7 +180,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 							<!-- /item -->
 
 							<!-- item -->
-							<div class="col-md-4 text-center">
+							<div class="col-md-3 text-center">
 								<div class="panel panel-success panel-pricing">
 									<div class="panel-heading">
 										<i class="fa fa-ticket"></i>

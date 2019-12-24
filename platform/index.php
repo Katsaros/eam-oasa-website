@@ -52,7 +52,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h1 class="mt-5">Καλωσόρισες <?php echo $_SESSION["fullname"] ?></h1>
+        <h1 class="mt-5">Καλωσόρισες <?php echo $_SESSION["username"] ?></h1>
 		<hr>
 		  <div class="btn-group-vertical">
 			<button type="button" class="btn btn-lg buttonstyle"><a class="nav-link" href="edit.php">Επεξεργασία των στοιχείων μου</a></button>

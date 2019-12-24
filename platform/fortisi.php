@@ -9,9 +9,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 require_once "../includes/config.php";
 $myid = $_SESSION['id'];
-
+$thankyou_msg = "";
 mysqli_set_charset($link, "utf8");
 
+//get some information
+$sql = $link->query("SELECT diadromes, card, purchases FROM users WHERE id = $myid"); 
+$row = $sql->fetch_row();
+$countDiadromes = $row[0];
+$cardNumber = $row[1];
+$sinoloAgorwn = $row[2];
+						
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
 	$diadromes_err ="";
@@ -33,7 +40,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $sql = "UPDATE users SET diadromes=diadromes+$diadromes, purchases=purchases+1 WHERE id=$myid";
 
 		if ($link->query($sql) === TRUE) {
-                header("location: fortisi.php");
+                //header("location: thankyou.php");
+			$thankyou_msg = 
+			'
+			<div class="col-lg-12">
+				<div class="card text-center">
+				  <div class="card-header">
+					Μόλις Αγοράστηκε
+				  </div>
+				  <div class="card-body">
+					<h5 class="card-title">Νέο Πακέτο:</h5>
+					<p class="card-text">Περιλαμβάνει '.$diadromes.' διαδρομές!</p>
+					<p class="card-text">Κάρτα χρέωσης: '.$cardNumber.'</p>
+					<a href="fortisi.php" class="btn btn-primary">Αγόρασε περισσότερες διαδρομές</a>
+				  </div>
+				  <div class="card-footer text-muted">
+					Ιδιοκτήτης εισιτηρίου: '.$_SESSION["fullname"].' 
+				  </div>
+				</div>
+				<br>
+			</div>
+			';
 		} else {
 			echo "Σφάλμα: " . $link->error;
 		}
@@ -86,6 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
       <div class="col-lg-12 text-center">
         <h1 class="mt-5">Διαδικασία online φόρτισης κάρτας</h1>
 		<hr>
+		<?php echo $thankyou_msg ?>
 		<div class="row">
 			<div class="col-lg-3">
 				<div class="card">
@@ -96,11 +124,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 					<li class="list-group-item">Όνομα: <?php echo $_SESSION["fullname"] ?></li>
 					<li class="list-group-item">Username: <?php echo $_SESSION["username"] ?></li>
 					<?php 
-						$sql = $link->query("SELECT diadromes, card, purchases FROM users WHERE id = $myid"); 
+						$sql = $link->query("SELECT diadromes purchases FROM users WHERE id = $myid"); 
 						$row = $sql->fetch_row();
 						$countDiadromes = $row[0];
-						$cardNumber = $row[1];
-						$sinoloAgorwn = $row[2];
 					?>
 					<li class="list-group-item">Εναπομείναντες Διαδρομές: <?php echo $countDiadromes ?></li>
 					<li class="list-group-item">Συνολικές Αγορές: <?php echo $sinoloAgorwn ?></li>

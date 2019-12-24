@@ -69,38 +69,74 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
- 
-<!DOCTYPE html>
-<html lang="en">
+ <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Αλλαγή Κωδικού</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Φόρτιση Εισιτηρίου</title>
+
+  <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="../css/buttons.css">
+
 </head>
+
 <body>
-    <div class="wrapper">
-        <h2>Αλλαγή Κωδικού</h2>
-        <p>Συμπληρώστε την παρακάτω φόρμα για να αλλάξετε τον κωδικό πρόσβαση σας.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
-            <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
-                <label>Νέος Κωδικός</label>
-                <input type="password" name="new_password" class="form-control" value="<?php echo $new_password; ?>">
-                <span class="help-block"><?php echo $new_password_err; ?></span>
-            </div>
-            <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <label>Επιβεβαίωση Κωδικού</label>
-                <input type="password" name="confirm_password" class="form-control">
-                <span class="help-block"><?php echo $confirm_password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Υποβολή">
-                <a class="btn btn-link" href="welcome.php">Ακύρωση</a>
-            </div>
-        </form>
-    </div>    
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">OASA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Προφίλ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fortisi.php">Φόρτιση</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout.php">Αποσύνδεση</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6 text-center">
+        <h1 class="mt-5">Αλλαγή Κωδικού</h1>
+		<hr>
+		<p>Συμπληρώστε την παρακάτω φόρμα για να αλλάξετε τον κωδικό πρόσβαση σας.</p>
+			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
+				<div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
+					<label>Νέος Κωδικός</label>
+					<input type="password" name="new_password" class="form-control" value="<?php echo $new_password; ?>">
+					<span class="help-block"><?php echo $new_password_err; ?></span>
+				</div>
+				<div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+					<label>Επιβεβαίωση Κωδικού</label>
+					<input type="password" name="confirm_password" class="form-control">
+					<span class="help-block"><?php echo $confirm_password_err; ?></span>
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-primary" value="Υποβολή">
+					<a class="btn btn-link" href="index.php">Ακύρωση</a>
+				</div>
+			</form>
+		</div>
+		<div class="col-lg-3"></div>
+    </div>
+  </div>
+
 </body>
+
 </html>

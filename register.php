@@ -3,8 +3,8 @@
 require_once "includes/config.php";
  
 // Define variables and initialize with empty values
-$username = $password = $confirm_password = "";
-$username_err = $password_err = $confirm_password_err = "";
+$username = $password = $confirm_password = $fullname = $card ="";
+$username_err = $password_err = $confirm_password_err = $fullname_err = $card_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -41,7 +41,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Close statement
         mysqli_stmt_close($stmt);
     }
-    
+  
+    // Validate fullname
+    if(empty(trim($_POST["fullname"]))){
+        $fullname_err = "Παρακαλώ δώστε ονοματεπώνυμο.";     
+    } elseif(strlen(trim($_POST["fullname"])) < 2){
+        $password_err = "Το ονοματεπώνυμο πρέπει να έχει τουλάχιστον 2 χαρακτήρες.";
+    } else{
+        $fullname = trim($_POST["fullname"]);
+    }
+  
+    // Validate card
+    if(empty(trim($_POST["card"]))){
+        $card_err = "Παρακαλώ δώστε τον αριθμό της πιστωτικής/χρεωστικής σας κάρτας.";     
+    } elseif(strlen(trim($_POST["card"])) != 16){
+        $card_err = "Ο αριθμός της κάρτας πρέπει να περιέχει 16 χαρακτήρες.";
+    } else{
+        $card = trim($_POST["card"]);
+    }
+  
     // Validate password
     if(empty(trim($_POST["password"]))){
         $password_err = "Παρακαλώ δώστε κωδικό.";     
@@ -62,17 +80,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
+    if(empty($username_err) && empty($card_err) && empty($password_err) && empty($fullname_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (username, fullname, password) VALUES (?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+            mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_fullname, $param_password);
             
             // Set parameters
             $param_username = $username;
+            $param_fullname = $fullname;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
             
             // Attempt to execute the prepared statement
@@ -115,7 +134,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 					<label>Username</label>
 					<input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
 					<span class="help-block"><?php echo $username_err; ?></span>
-				</div>    
+				</div>   
+				<div class="form-group <?php echo (!empty($fullname_err)) ? 'has-error' : ''; ?>">
+					<label>Ονοματεπώνυμο</label>
+					<input type="text" name="fullname" class="form-control" value="<?php echo $fullname; ?>">
+					<span class="help-block"><?php echo $fullname_err; ?></span>
+				</div>   
+				<div class="form-group <?php echo (!empty($card_err)) ? 'has-error' : ''; ?>">
+					<label>Αριθμός Πιστωτικής/Χρεωστικής Κάρτας</label>
+					<input type="text" name="card" class="form-control" value="<?php echo $card; ?>">
+					<span class="help-block"><?php echo $card_err; ?></span>
+				</div> 
 				<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
 					<label>Κωδικός</label>
 					<input type="password" name="password" class="form-control" value="<?php echo $password; ?>">

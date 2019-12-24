@@ -8,5 +8,61 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 ?>
-<h1>Γειά <?php echo $_SESSION["username"] ?>!<h1>
-<h1><a href="logout.php">Αποσύνδεση</a><h1>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Φόρτιση Εισιτηρίου</title>
+
+  <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="../css/buttons.css">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">OASA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.php">Προφίλ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fortisi.php">Φόρτιση</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout.php">Αποσύνδεση</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">Καλωσόρισες <?php echo $_SESSION["fullname"] ?></h1>
+		<hr>
+		  <div class="btn-group-vertical">
+			<button type="button" class="btn btn-lg buttonstyle"><a class="nav-link" href="edit.php">Επεξεργασία των στοιχείων μου</a></button>
+			<button type="button" class="btn btn-lg buttonstyle"><a class="nav-link" href="fortisi.php">Φόρτιση Κάρτας</a></button>
+			<button type="button" class="btn btn-lg buttonstyle"><a class="nav-link" href="reset.php">Αλλαγή κωδικού</a></button>
+		  </div>
+		</div>
+    </div>
+  </div>
+
+</body>
+
+</html>

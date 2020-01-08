@@ -1,20 +1,20 @@
 <?php
 session_start();
 
-$cardID = $_REQUEST['cardID'] ;
 $payCard = $_REQUEST['payCard'] ;
 $name = $_REQUEST['name'] ;
 $tel = $_REQUEST['tel'] ;
 $packet = $_REQUEST['packet'] ;
+$odos = $_REQUEST['odos'] ;
 
-$_SESSION['cardID'] = $cardID;
 $_SESSION['name'] = $name;
 
 $thanks_message ="";
+$generatedCardId = substr(md5(microtime()),rand(0,26),5);
 
 if(isset($_SESSION['name']))
 {
-	$thanks_message = 'Η φόρτιση της κάρτας '.$_SESSION['cardID'].' στο όνομα του κατόχου '.$_SESSION['name'].' <b>ολοκληρώθηκε</b> με επιτυχία και προστέθηκε το πακέτο '.$packet.'! <br><a href="../index.php"><font color=#d60000>Επιστροφή στην Αρχική</font></a>';
+	$thanks_message = 'Η αγορά της κάρτας '.$generatedCardId.' στο όνομα του κατόχου '.$_SESSION['name'].' <b>ολοκληρώθηκε</b> με επιτυχία και προστέθηκε το πακέτο '.$packet.'!<br>Διεύθυνση αποστολής κάρτας: '.$odos.' <br><a href="../index.php"><font color=#d60000>Επιστροφή στην Αρχική</font></a>';
 	unset($_SESSION['name']);
 }
 else

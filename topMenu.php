@@ -63,9 +63,8 @@ echo'
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="search.php">Αναζήτηση</a>
-              <a class="dropdown-item" href="#">Υποχρεώσεις προς επιβάτες </a>
-              <a class="dropdown-item" href="#">Απωλεσθέντα</a>
-              <a class="dropdown-item" href="#">Αμέα</a>
+              <a class="dropdown-item" href="lost.php">Απωλεσθέντα</a>
+              <a class="dropdown-item" href="amea.php">Αμέα</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -81,7 +80,7 @@ echo'
               Νέα
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Δελτία τύπου </a>
+              <a class="dropdown-item" href="pressRelease.php">Δελτία τύπου </a>
               <a class="dropdown-item" href="#">Δρομολόγια</a>
               <a class="dropdown-item" href="#">Προκυρήξεις</a>
             </div>

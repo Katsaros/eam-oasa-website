@@ -8,7 +8,7 @@ echo'
       crossorigin="anonymous"
     />
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-      <a class="navbar-brand" href="#">ΟΑΣΑ</a>
+      <a class="navbar-brand" href="#">OASA</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -23,7 +23,7 @@ echo'
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="index.php"
               >Αρχική <span class="sr-only">(current)</span></a
             >
           </li>
@@ -62,6 +62,7 @@ echo'
               Πληροφόρηση
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="search.php">Αναζήτηση</a>
               <a class="dropdown-item" href="#">Υποχρεώσεις προς επιβάτες </a>
               <a class="dropdown-item" href="#">Απωλεσθέντα</a>
               <a class="dropdown-item" href="#">Αμέα</a>
@@ -125,6 +126,9 @@ echo'
             </div>
           </li>
         </ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li><a href="login.php">Σύνδεση</a></li>
+		</ul>
       </div>
     </nav>
     <script

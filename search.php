@@ -27,7 +27,7 @@
 		   mysqli_set_charset($link, "utf8");
 			$q = $_POST['q'];
 			
-			$sql = "SELECT * FROM dromologia WHERE onoma='$q'";
+			$sql = "SELECT * FROM dromologia WHERE onoma LIKE '$q%'";
 			$result = $link->query($sql);
 			if ($result > 0) 
 			{

@@ -6,6 +6,7 @@
     <title>Document</title>
   </head>
   <body>
+  <?php include 'topMenuLoggedIn.php'; ?>
     <div style="padding: 5px;">
       <h4 style="margin: 5px 0px;">
         ΥΠΗΡΕΣΙΕΣ ΑΠΩΛΕΣΘΕΝΤΩΝ ΑΝΤΙΚΕΙΜΕΝΩΝ

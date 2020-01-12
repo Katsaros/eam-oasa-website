@@ -1,7 +1,7 @@
 <?php
 // Initialize the session
 session_start();
- 
+
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: ../login.php");
@@ -13,12 +13,12 @@ $thankyou_msg = "";
 mysqli_set_charset($link, "utf8");
 
 //get some information
-$sql = $link->query("SELECT diadromes, card, purchases FROM users WHERE id = $myid"); 
+$sql = $link->query("SELECT diadromes, card, purchases FROM users WHERE id = $myid");
 $row = $sql->fetch_row();
 $countDiadromes = $row[0];
 $cardNumber = $row[1];
 $sinoloAgorwn = $row[2];
-						
+
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
 	$diadromes_err ="";
@@ -26,13 +26,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     // Validate client
     if(empty(trim($_POST["diadromes"])))
     {
-        $diadromes_err = "Πρόβλημα κατά την αγορά, δοκιμάστε πάλι αργότερα.";     
+        $diadromes_err = "Πρόβλημα κατά την αγορά, δοκιμάστε πάλι αργότερα.";
     }
     else
     {
         $diadromes = trim($_POST["diadromes"]);
     }
-    
+
     // Check input errors before updating the database
     if(empty($diadromes_err))
     {
@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 		if ($link->query($sql) === TRUE) {
                 //header("location: thankyou.php");
-			$thankyou_msg = 
+			$thankyou_msg =
 			'
 			<div class="col-lg-12">
 				<div class="card text-center">
@@ -55,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 					<a href="fortisi.php" class="btn btn-primary">Αγόρασε περισσότερες διαδρομές</a>
 				  </div>
 				  <div class="card-footer text-muted">
-					Ιδιοκτήτης εισιτηρίου: '.$_SESSION["fullname"].' 
+					Ιδιοκτήτης εισιτηρίου: '.$_SESSION["fullname"].'
 				  </div>
 				</div>
 				<br>
@@ -83,9 +83,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 </head>
 
 <body>
-
+<?php include '../topMenuLoggedIn.php'; ?>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
       <a class="navbar-brand" href="#">OASA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,7 +105,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
   <!-- Page Content -->
   <div class="container">
@@ -123,8 +123,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 				  <ul class="list-group list-group-flush">
 					<li class="list-group-item">Όνομα: <?php echo $_SESSION["fullname"] ?></li>
 					<li class="list-group-item">Username: <?php echo $_SESSION["username"] ?></li>
-					<?php 
-						$sql = $link->query("SELECT diadromes purchases FROM users WHERE id = $myid"); 
+					<?php
+						$sql = $link->query("SELECT diadromes purchases FROM users WHERE id = $myid");
 						$row = $sql->fetch_row();
 						$countDiadromes = $row[0];
 					?>
@@ -134,7 +134,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 				  </ul>
 				</div>
 			</div>
-			<div class="col-lg-9">			
+			<div class="col-lg-9">
 				<!-- Plans -->
 				<section id="plans">
 					<div class="container">
@@ -160,7 +160,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 								</div>
 							</div>
 							<!-- /item -->
-						
+
 							<!-- item -->
 							<div class="col-md-3 text-center">
 								<div class="panel panel-danger panel-pricing">
@@ -236,7 +236,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
       </div>
     </div>
   </div>
-
+  <?php include '../footer.php'; ?>
 </body>
 
 </html>

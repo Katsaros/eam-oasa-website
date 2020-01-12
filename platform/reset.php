@@ -1,32 +1,32 @@
 <?php
 // Initialize the session
 session_start();
- 
+
 // Check if the user is logged in, if not then redirect to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: ../login.php");
     exit;
 }
- 
+
 // Include config file
 require_once "../includes/config.php";
- 
+
 // Define variables and initialize with empty values
 $new_password = $confirm_password = "";
 $new_password_err = $confirm_password_err = "";
- 
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
+
     // Validate new password
     if(empty(trim($_POST["new_password"]))){
-        $new_password_err = "Πληκτρολογήστε τον νέο κωδικό πρόσβασης.";     
+        $new_password_err = "Πληκτρολογήστε τον νέο κωδικό πρόσβασης.";
     } elseif(strlen(trim($_POST["new_password"])) < 8){
         $new_password_err = "Ο κωδικός πρέπει να έχει τουλάχιστον 8 χαρακτήρες.";
     } else{
         $new_password = trim($_POST["new_password"]);
     }
-    
+
     // Validate confirm password
     if(empty(trim($_POST["confirm_password"]))){
         $confirm_password_err = "Παρακαλώ επιβεβαιώστε τον κωδικό σας.";
@@ -36,20 +36,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $confirm_password_err = "Οι κωδικοί δεν ταιριάζουν μεταξύ τους.";
         }
     }
-        
+
     // Check input errors before updating the database
     if(empty($new_password_err) && empty($confirm_password_err)){
         // Prepare an update statement
         $sql = "UPDATE users SET password = ? WHERE id = ?";
-        
+
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "si", $param_password, $param_id);
-            
+
             // Set parameters
             $param_password = password_hash($new_password, PASSWORD_DEFAULT);
             $param_id = $_SESSION["id"];
-            
+
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Password updated successfully. Destroy the session, and redirect to login page
@@ -60,11 +60,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "Κάποιο λάθος συνέβη, δοκιμάστε ξανά αργότερα!";
             }
         }
-        
+
         // Close statement
         mysqli_stmt_close($stmt);
     }
-    
+
     // Close connection
     mysqli_close($link);
 }
@@ -85,29 +85,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">OASA</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">Προφίλ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="fortisi.php">Φόρτιση</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="logout.php">Αποσύνδεση</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+<?php include '../topMenuLoggedIn.php'; ?>
   <!-- Page Content -->
   <div class="container">
     <div class="row">
@@ -116,7 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <h1 class="mt-5">Αλλαγή Κωδικού</h1>
 		<hr>
 		<p>Συμπληρώστε την παρακάτω φόρμα για να αλλάξετε τον κωδικό πρόσβαση σας.</p>
-			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
+			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 				<div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
 					<label>Νέος Κωδικός</label>
 					<input type="password" name="new_password" class="form-control" value="<?php echo $new_password; ?>">
@@ -136,7 +114,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		<div class="col-lg-3"></div>
     </div>
   </div>
-
+  <?php include '../footer.php'; ?>
 </body>
 
 </html>

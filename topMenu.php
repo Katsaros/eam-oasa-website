@@ -125,9 +125,9 @@ echo'
             </div>
           </li>
         </ul>
-		<ul class="nav navbar-nav navbar-right">
-		  <li><a href="login.php">Σύνδεση</a></li>
-		</ul>
+
+    <button  style="margin-left:auto;" type="button" class="btn btn-light"><a style="color:#343A40;" href="login.php">Σύνδεση</a></button>
+
       </div>
     </nav>
     <script

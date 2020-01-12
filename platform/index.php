@@ -1,7 +1,7 @@
 <?php
 // Initialize the session
 session_start();
- 
+
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: ../login.php");
@@ -25,28 +25,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">OASA</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.php">Προφίλ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="fortisi.php">Φόρτιση</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="logout.php">Αποσύνδεση</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<?php include '../topMenuLoggedIn.php'; ?>
+
 
   <!-- Page Content -->
   <div class="container">
@@ -62,7 +42,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		</div>
     </div>
   </div>
-
+  <?php include '../footer.php'; ?>
 </body>
 
 </html>

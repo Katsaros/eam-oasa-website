@@ -1,13 +1,13 @@
 <?php
 // Initialize the session
 session_start();
- 
+
 // Check if the user is logged in, if not then redirect to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: ../login.php");
     exit;
 }
- 
+
 // Include config file
 require_once "../includes/config.php";
 
@@ -23,13 +23,13 @@ if (isset($_SESSION['id'])) {
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = $fullname = $card = $done_message = "";
 $username_err = $password_err = $confirm_password_err = $fullname_err = $card_err = "";
- 
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-  
+
     // Validate fullname
     if(empty(trim($_POST["fullname"]))){
-        $fullname_err = "Παρακαλώ δώστε ονοματεπώνυμο.";     
+        $fullname_err = "Παρακαλώ δώστε ονοματεπώνυμο.";
     } elseif(strlen(trim($_POST["fullname"])) < 2){
         $fullname_err = "Το ονοματεπώνυμο πρέπει να έχει τουλάχιστον 2 χαρακτήρες.";
     } else{
@@ -38,23 +38,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Validate card
     if(empty(trim($_POST["card"]))){
-        $card_err = "Παρακαλώ δώστε τον αριθμό της πιστωτικής/χρεωστικής σας κάρτας.";     
+        $card_err = "Παρακαλώ δώστε τον αριθμό της πιστωτικής/χρεωστικής σας κάρτας.";
     } elseif(strlen(trim($_POST["card"])) != 16){
         $card_err = "Ο αριθμός της κάρτας πρέπει να περιέχει 16 χαρακτήρες.";
     } else{
         $card = trim($_POST["card"]);
     }
-    
+
     // Check input errors before inserting in database
     if(empty($card_err) && empty($fullname_err)){
-        
-        // Prepare an insert statement            
+
+        // Prepare an insert statement
         $sql = "UPDATE users SET fullname = ?, card = ? WHERE id = ? ";
-        
+
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "sss", $param_fullname, $param_card, $param_id);
-			
+
             // Set parameters
             $param_fullname = $fullname;
             $param_card = $card;
@@ -68,12 +68,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             } else{
                 echo "Κάποιο λάθος συνέβη, δοκιμάστε ξανά αργότερα!";
 			}
-			
+
 			// Close statement
 			mysqli_stmt_close($stmt);
         }
     }
-    
+
     // Close connection
     mysqli_close($link);
 }
@@ -94,28 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">OASA</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">Προφίλ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="fortisi.php">Φόρτιση</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="logout.php">Αποσύνδεση</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<?php include '../topMenuLoggedIn.php'; ?>
 
   <!-- Page Content -->
   <div class="container">
@@ -124,7 +103,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <div class="col-lg-6 text-center">
         <h1 class="mt-5">Επεξεργασία Προφίλ</h1>
 		<hr>
-			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
+			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
 				<div class="form-group <?php echo (!empty($fullname_err)) ? 'has-error' : ''; ?>">
 					<label>Ονοματεπώνυμο</label>
@@ -146,7 +125,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		<div class="col-lg-3"></div>
     </div>
   </div>
-
+  <?php include '../footer.php'; ?>
 </body>
 
 </html>

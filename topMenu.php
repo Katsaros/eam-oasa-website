@@ -118,7 +118,7 @@ echo'
               Επικοινωνία
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Παράπονα </a>
+              <a class="dropdown-item" href="parapona.php">Παράπονα </a>
               <a class="dropdown-item" href="#">Επαγγελματίες</a>
               <a class="dropdown-item" href="#">Επικοινωνία με φορείς </a>
               <a class="dropdown-item" href="#">Σύνδεσμοι </a>

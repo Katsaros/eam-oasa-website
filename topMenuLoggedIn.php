@@ -23,7 +23,10 @@ echo'
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
         <li class="nav-item">
-        <a class="nav-link" href="index.php">Προφίλ</a>
+        <a class="nav-link" href="/eam-oasa-website/index.php">Αρχική</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/eam-oasa-website/platform/index.php">Προφίλ</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="fortisi.php">Φόρτιση</a>
@@ -41,10 +44,8 @@ echo'
               Μετακίνηση
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/eam-oasa-website/platform/agora.php">Αγορά Κάρτας</a>
-              <a class="dropdown-item" href="/eam-oasa-website/platform/fortisi.php">Φόρτιση Κάρτας</a>
               <a class="dropdown-item" href="#">Μέσα </a>
-              <a class="dropdown-item" href="veltisti-diadromi.php">Βέλτιστη Διαδρομή</a>
+              <a class="dropdown-item" href="/eam-oasa-website/veltisti-diadromi.php">Βέλτιστη Διαδρομή</a>
               <a class="dropdown-item" href="#"
                 >Πληροφόρηση σε Πραγματικό χρόνο</a
               >
@@ -119,7 +120,7 @@ echo'
               Επικοινωνία
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Παράπονα </a>
+              <a class="dropdown-item" href="/eam-oasa-website/parapona.php">Παράπονα </a>
               <a class="dropdown-item" href="#">Επαγγελματίες</a>
               <a class="dropdown-item" href="#">Επικοινωνία με φορείς </a>
               <a class="dropdown-item" href="#">Σύνδεσμοι </a>

@@ -10,8 +10,20 @@
 
 <body>
     <div style="display: flex;flex-direction: column;height: 100vh;">
-        <?php include 'topMenu.php'; ?>
-        <div style="height: 100%;">
+		<?php
+		// Initialize the session
+		session_start();
+		// Check if the user is logged in, if not then show logoutmenu
+		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+		{
+			include 'topMenu.php';
+		}
+		else
+		{
+			include 'topMenuLoggedIn.php';
+		}
+		?>
+		<div style="height: 100%;">
             content
 
         </div>

@@ -43,7 +43,7 @@ echo'
               <a class="dropdown-item" href="agora.php">Αγορά Κάρτας</a>
               <a class="dropdown-item" href="fortisi.php">Φόρτιση Κάρτας</a>
               <a class="dropdown-item" href="#">Μέσα </a>
-              <a class="dropdown-item" href="#">Βέλτιστη Διαδρομή</a>
+              <a class="dropdown-item" href="veltisti-diadromi.php">Βέλτιστη Διαδρομή</a>
               <a class="dropdown-item" href="#"
                 >Πληροφόρηση σε Πραγματικό χρόνο</a
               >

@@ -10,7 +10,19 @@
 
 <body>
   <div style="height: 100vh;">
-    <?php include 'topMenu.php'; ?>
+	<?php
+	// Initialize the session
+	session_start();
+	// Check if the user is logged in, if not then show logoutmenu
+	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+	{
+		include 'topMenu.php';
+	}
+	else
+	{
+		include 'topMenuLoggedIn.php';
+	}
+	?>
     <div style="height: 100%;">hello</div>
     <?php include 'footer.php'; ?>
   </div>

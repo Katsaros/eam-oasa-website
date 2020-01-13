@@ -7,7 +7,19 @@
     <title>Φόρτιση</title>
   </head>
   <body>
-	<?php include 'topMenu.php'; ?>
+	<?php
+	// Initialize the session
+	session_start();
+	// Check if the user is logged in, if not then show logoutmenu
+	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+	{
+		include 'topMenu.php';
+	}
+	else
+	{
+		include 'topMenuLoggedIn.php';
+	}
+	?>
 	<!-- Η φόρμα αρχίζει εδώ -->
 	<form method="post" action="done/thankyou_fortisi.php"> 
 		<div class="form-group col-lg-6 col-xs-12">                                

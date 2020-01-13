@@ -6,7 +6,19 @@
     <title>Document</title>
   </head>
   <body>
-  <?php include 'topMenuLoggedIn.php'; ?>
+	<?php
+	// Initialize the session
+	session_start();
+	// Check if the user is logged in, if not then show logoutmenu
+	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+	{
+		include 'topMenu.php';
+	}
+	else
+	{
+		include 'topMenuLoggedIn.php';
+	}
+	?>
     <div style="padding: 5px;">
       <h4 style="margin: 5px 0px;">
         ΥΠΗΡΕΣΙΕΣ ΑΠΩΛΕΣΘΕΝΤΩΝ ΑΝΤΙΚΕΙΜΕΝΩΝ

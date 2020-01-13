@@ -8,6 +8,19 @@
 </head>
 
 <body>
+	<?php
+	// Initialize the session
+	session_start();
+	// Check if the user is logged in, if not then show logoutmenu
+	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+	{
+		include 'topMenu.php';
+	}
+	else
+	{
+		include 'topMenuLoggedIn.php';
+	}
+	?>
     <ul>
         <li style="font-size: 12px;color: blue;cursor: pointer;margin: 5px 0px;">
             <strong>

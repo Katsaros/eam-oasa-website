@@ -10,7 +10,19 @@
     <title>Αναζήτηση</title>
   </head>
   <body>
-	<?php include 'topMenu.php'; ?>
+	<?php
+	// Initialize the session
+	session_start();
+	// Check if the user is logged in, if not then show logoutmenu
+	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+	{
+		include 'topMenu.php';
+	}
+	else
+	{
+		include 'topMenuLoggedIn.php';
+	}
+	?>
     <h2 class="page-header">Αναζήτηση</h2>
 	
 	<div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
@@ -27,7 +39,7 @@
 		   mysqli_set_charset($link, "utf8");
 			$q = $_POST['q'];
 			
-			$sql = "SELECT * FROM dromologia WHERE onoma LIKE '$q%'";
+			$sql = "SELECT * FROM search_route WHERE starting_point LIKE '$q%'";
 			$result = $link->query($sql);
 			if ($result > 0) 
 			{

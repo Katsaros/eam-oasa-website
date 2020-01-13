@@ -98,7 +98,7 @@ echo'
               Οργανισμός
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Ιστορία </a>
+              <a class="dropdown-item" href="history.php">Ιστορία </a>
               <a class="dropdown-item" href="#">Διοικητική Δομή</a>
               <a class="dropdown-item" href="#">Καταστατικό</a>
               <a class="dropdown-item" href="#">Εταιρείες ομίλου</a>

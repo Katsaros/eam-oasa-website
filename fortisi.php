@@ -20,12 +20,12 @@
 			include 'topMenuLoggedIn.php';
 		}
 		?>
-		<ol class="breadcrumb">
+		<ol style="background: #fff;border-bottom:2px solid black" class="breadcrumb">
 			<li class="breadcrumb-item " aria-current="page">Μετακίνηση</li>
 			<li class="breadcrumb-item " aria-current="page">Φόρτιση Κάρτας</li>
 		</ol>
 		<!-- Η φόρμα αρχίζει εδώ -->
-		<div style=" padding:50px; display: flex;justify-content:center;">
+		<div style="padding:50px; display: flex;justify-content:center;">
 			<form method="post" action="done/thankyou_fortisi.php">
 				<div class="form-group col-lg-6 col-xs-12">
 					<input type="text" name="name" placeholder="Όνομα Κατόχου*" required>
@@ -49,7 +49,7 @@
 					</select>
 				</div>
 				<div class="form-group col-lg-12 col-xs-12">
-					<button>Φόρτιση Κάρτας</button>
+					<button class="btn btn-dark">Φόρτιση Κάρτας</button>
 				</div>
 				<!-- Η φόρμα τελειώνει εδώ -->
 			</form>

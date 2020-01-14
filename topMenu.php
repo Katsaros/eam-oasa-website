@@ -82,7 +82,7 @@ echo'
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="pressRelease.php">Δελτία τύπου </a>
               <a class="dropdown-item" href="#">Δρομολόγια</a>
-              <a class="dropdown-item" href="#">Προκυρήξεις</a>
+              <a class="dropdown-item" href="prokiriksi.php">Προκυρήξεις</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -120,7 +120,6 @@ echo'
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="parapona.php">Παράπονα </a>
               <a class="dropdown-item" href="#">Επαγγελματίες</a>
-              <a class="dropdown-item" href="#">Επικοινωνία με φορείς </a>
               <a class="dropdown-item" href="#">Σύνδεσμοι </a>
             </div>
           </li>

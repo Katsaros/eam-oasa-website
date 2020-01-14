@@ -11,7 +11,7 @@
 <body>
 	<div style="min-height:100vh;position:relative;color:#343A40;">
 		<?php include 'topMenu.php'; ?>
-		<ol class="breadcrumb">
+		<ol style="background: #fff;border-bottom:2px solid black" class="breadcrumb">
 			<li class="breadcrumb-item " aria-current="page">Μετακίνηση</li>
 			<li class="breadcrumb-item " aria-current="page">Αγορά Κάρτας</li>
 		</ol>
@@ -46,7 +46,7 @@
 					<textarea name="comments" maxlength="500" placeholder="Αν θέλετε αφήνετε κάποιο σχόλιο"></textarea>
 				</div>
 				<div class="form-group col-lg-12 col-xs-12">
-					<button>Φόρτιση Κάρτας</button>
+					<button class="btn btn-dark">Φόρτιση Κάρτας</button>
 				</div>
 			</form>
 		</div>

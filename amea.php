@@ -18,7 +18,7 @@
     include 'topMenuLoggedIn.php';
   }
   ?>
-  <ol class="breadcrumb">
+  <ol style="background: #fff;border-bottom:2px solid black" class="breadcrumb">
     <li class="breadcrumb-item " aria-current="page">Πληροφόρηση</li>
     <li class="breadcrumb-item " aria-current="page">Αμέα</li>
   </ol>

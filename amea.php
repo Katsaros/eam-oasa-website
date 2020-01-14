@@ -8,7 +8,21 @@
 </head>
 
 <body>
-  <div style="font-size: 12px;">
+  <?php
+  // Initialize the session
+  session_start();
+  // Check if the user is logged in, if not then show logoutmenu
+  if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    include 'topMenu.php';
+  } else {
+    include 'topMenuLoggedIn.php';
+  }
+  ?>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item " aria-current="page">Πληροφόρηση</li>
+    <li class="breadcrumb-item " aria-current="page">Αμέα</li>
+  </ol>
+  <div style="font-size: 15px;padding:0 10px;">
     <p>
       Το πρόβλημα της μετακίνησης-μεταφοράς των εμποδιζομένων ατόμων στις
       σύγχρονες πόλεις παραμένει έντονο με αρνητικές συνέπειες στην ποιότητα
@@ -19,7 +33,7 @@
       εγείρονται στο κάθε είδους περιβάλλον εμποδίζεται η δυνατότητα και
       ικανότητάς τους για πρόσβαση σε διάφορους χώρους και στα ΜΜΜ.
     </p>
-    <p style="font-size: 12px;">
+    <p style="font-size: 15px;">
       Τα εμποδιζόμενα άτομα βάσει στατιστικών ανέρχονται στο 42.5% του
       ελληνικού πληθυσμού. Ανάλυση:
       <ul>
@@ -51,6 +65,7 @@
       οχήματα θα είναι από από Δευτέρα - Παρασκευή από 07:30 - 14:00
     </p>
   </div>
+  <?php include 'footer.php'; ?>
 </body>
 
 </html>

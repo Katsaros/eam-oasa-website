@@ -1,24 +1,30 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-  </head>
-  <body>
-	<?php
-	// Initialize the session
-	session_start();
-	// Check if the user is logged in, if not then show logoutmenu
-	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
-	{
-		include 'topMenu.php';
-	}
-	else
-	{
-		include 'topMenuLoggedIn.php';
-	}
-	?>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="height:100vh;position:relative;color:#343A40;">
+    <?php
+    // Initialize the session
+    session_start();
+    // Check if the user is logged in, if not then show logoutmenu
+    if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+      include 'topMenu.php';
+    } else {
+      include 'topMenuLoggedIn.php';
+    }
+    ?>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item " aria-current="page">Πληροφόρηση</li>
+        <li class="breadcrumb-item " aria-current="page">Απωλεσθέντα</li>
+      </ol>
+    </nav>
     <div style="padding: 5px;">
       <h4 style="margin: 5px 0px;">
         ΥΠΗΡΕΣΙΕΣ ΑΠΩΛΕΣΘΕΝΤΩΝ ΑΝΤΙΚΕΙΜΕΝΩΝ
@@ -45,5 +51,10 @@
         Κρατίνου 9 & Αθηνάς, Αθήνα.
       </div>
     </div>
-  </body>
+    <div style="position:absolute;bottom:0;width:100vw;">
+      <?php include 'footer.php'; ?>
+    </div>
+  </div>
+</body>
+
 </html>

@@ -16,8 +16,10 @@
 			<li class="breadcrumb-item " aria-current="page">Αγορά Κάρτας</li>
 		</ol>
 		<!-- Η φόρμα αρχίζει εδώ -->
-		<div style="display: flex;justify-content:center;">
-			<form method="post" action="done/thankyou_agora.php">
+		<h2 style="text-align: center;" class="display-6">Συμπλήρωσε τα στοιχεία</h2>
+		<div style="display: flex;justify-content:center;margin-bottom:20px;">
+			<form style="box-shadow: 0 0 5px;padding:30px 100px;" method="post" action="done/thankyou_agora.php">
+
 				<div class="form-group col-lg-6 col-xs-12">
 					<input type="text" name="name" placeholder="Όνομα Κατόχου*" required>
 				</div>

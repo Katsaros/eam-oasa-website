@@ -22,7 +22,7 @@
     <li class="breadcrumb-item " aria-current="page">Πληροφόρηση</li>
     <li class="breadcrumb-item " aria-current="page">Αμέα</li>
   </ol>
-  <div style="font-size: 15px;padding:0 10px;">
+  <div class="" style="font-size: 15px;padding:0 10px;">
     <p>
       Το πρόβλημα της μετακίνησης-μεταφοράς των εμποδιζομένων ατόμων στις
       σύγχρονες πόλεις παραμένει έντονο με αρνητικές συνέπειες στην ποιότητα

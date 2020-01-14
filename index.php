@@ -38,7 +38,7 @@
 					</div>
 					<div class="card-body">
 						<h5 class="card-title">Βέλτιστη Διαδρομή</h5>
-						<p class="card-text">Ενδιαφέρεσαι να μάθεις ποια είναι η Βέλτιστη διαδρομή για να πας στον προορισμό σου;Δες την πιο γρήγρο επιλογή</p>
+						<p class="card-text">Ενδιαφέρεσαι να μάθεις ποια είναι η βέλτιστη διαδρομή για να πας στον προορισμό σου;Δες την πιο γρήγορη επιλογή άμεσα με ενα κλίκ</p>
 						<a href="#" class="btn btn-dark">Βέλτιστη διαδρομή</a>
 					</div>
 				</div>
@@ -64,8 +64,7 @@
 				</div>
 
 			</div>
-			<div style="flex:1;padding:10px;">
-				<h2>Καλωσορίσατε στην ιστοσελίδα του OASA</h2>
+			<div style="flex:1;padding:30px;">
 				<div>
 					<video width="100%" controls="">
 						<source type="video/mp4" src="http://oasa.gr/media/xmas_visual3b.mp4"></video>

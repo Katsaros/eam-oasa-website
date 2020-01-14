@@ -24,9 +24,9 @@
 			<li class="breadcrumb-item " aria-current="page">Επικοινωνία</li>
 			<li class="breadcrumb-item " aria-current="page">Παράπονα</li>
 		</ol>
-		<div style="padding: 20px" class="d-flex flex-column justify-content-between align-items-center ">
-			<h2>Αποστολή Παραπόνων</h2>
-			<form style=" margin:10px 0 0 50px" action="mailto:someone@example.com" method="post" enctype="text/plain">
+		<h2 style="text-align: center;" class="display-6">Αποστολή Παραπόνων</h2>
+		<div style="display: flex;justify-content:center;margin-bottom:20px;">
+			<form style="box-shadow: 0 0 5px;padding:30px 100px;" action="mailto:someone@example.com" method="post" enctype="text/plain">
 				Όνομα:<br>
 				<input type="text" name="name"><br>
 				Τηλέφωνο:<br>

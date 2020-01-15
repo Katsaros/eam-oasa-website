@@ -44,9 +44,6 @@ echo'
               <a class="dropdown-item" href="fortisi.php">Φόρτιση Κάρτας</a>
               <a class="dropdown-item" href="#">Μέσα </a>
               <a class="dropdown-item" href="veltisti-diadromi.php">Βέλτιστη Διαδρομή</a>
-              <a class="dropdown-item" href="#"
-                >Πληροφόρηση σε Πραγματικό χρόνο</a
-              >
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -65,6 +62,7 @@ echo'
               <a class="dropdown-item" href="search.php">Αναζήτηση</a>
               <a class="dropdown-item" href="lost.php">Απωλεσθέντα</a>
               <a class="dropdown-item" href="amea.php">Αμέα</a>
+              <a class="dropdown-item" href="cost.php">Κόστος</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -102,7 +100,7 @@ echo'
               <a class="dropdown-item" href="#">Διοικητική Δομή</a>
               <a class="dropdown-item" href="#">Καταστατικό</a>
               <a class="dropdown-item" href="#">Εταιρείες ομίλου</a>
-              <a class="dropdown-item" href="#">Οργανόγραμμα</a>
+           
             </div>
           </li>
           <li class="nav-item dropdown">

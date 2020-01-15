@@ -29,7 +29,7 @@
 					<div class="card-body">
 						<h5 class="card-title">Kόστος εισητηρίων</h5>
 						<p class="card-text">Μάθε για όλες τις τιμές των εισητηρίων σε όλα τα μέσα,δες όλα τα διαθέσιμα πακέτα και αποφάσισε το καλύτερο για εσένα</p>
-						<a href="#" class="btn btn-dark">Κόστος</a>
+						<a href="cost.php" class="btn btn-dark">Κόστος</a>
 					</div>
 				</div>
 				<div style="box-shadow: 0 0 5px" class="card">
@@ -39,7 +39,7 @@
 					<div class="card-body">
 						<h5 class="card-title">Βέλτιστη Διαδρομή</h5>
 						<p class="card-text">Ενδιαφέρεσαι να μάθεις ποια είναι η βέλτιστη διαδρομή για να πας στον προορισμό σου;Δες την πιο γρήγορη επιλογή άμεσα με ενα κλίκ</p>
-						<a href="#" class="btn btn-dark">Βέλτιστη διαδρομή</a>
+						<a href="veltisti-diadromi.php" class="btn btn-dark">Βέλτιστη διαδρομή</a>
 					</div>
 				</div>
 				<div style="box-shadow: 0 0 5px" class="card">
@@ -59,7 +59,7 @@
 					<div class="card-body">
 						<h5 class="card-title">Φόρτιση κάρτας</h5>
 						<p class="card-text">Μπορείς άμεσα να φορτίσεις την κάρτα σου εύκολα,γρήγορα και με την με μέγιστη ασφάλεια</p>
-						<a href="#" class="btn btn-dark">Φόρτιση</a>
+						<a href="fortisi.php" class="btn btn-dark">Φόρτιση</a>
 					</div>
 				</div>
 
@@ -75,7 +75,7 @@
 						<p class="lead">Ενδιαφέρεσαι να μάθεις για την ιστορία του ΟΑΣΑ</p>
 						<hr class="my-4">
 						<p>Οι Συγκοινωνίες Αθηνών είναι οι δημόσιες υπηρεσίες μετακίνησης, που προσφέρουν οι Ο.Α.Σ.Α., ΣΤΑ.ΣΥ. (μετρό, ηλεκτρικός και τραμ) και Ο.ΣΥ. (λεωφορεία και τρόλεϊ), οι οποίες λειτουργούν με τρόπο ενιαίο για να κάνουν πραγματικότητα την ιδέα: «Μια πόλη. Ένα δίκτυο.»</p>
-						<a class="btn btn-dark btn-lg" href="#" role="button">Ιστορία</a>
+						<a class="btn btn-dark btn-lg" href="history" role="button">Ιστορία</a>
 					</div>
 				</div>
 			</div>

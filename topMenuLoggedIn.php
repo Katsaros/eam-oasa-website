@@ -46,9 +46,6 @@ echo'
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#">Μέσα </a>
               <a class="dropdown-item" href="/eam-oasa-website/veltisti-diadromi.php">Βέλτιστη Διαδρομή</a>
-              <a class="dropdown-item" href="#"
-                >Πληροφόρηση σε Πραγματικό χρόνο</a
-              >
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -67,6 +64,7 @@ echo'
               <a class="dropdown-item" href="/eam-oasa-website/search.php">Αναζήτηση</a>
               <a class="dropdown-item" href="/eam-oasa-website/lost.php">Απωλεσθέντα</a>
               <a class="dropdown-item" href="/eam-oasa-website/amea.php">Αμέα</a>
+              <a class="dropdown-item" href="/eam-oasa-website/cost.php">Κόστος</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -83,7 +81,7 @@ echo'
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="/eam-oasa-website/pressRelease.php">Δελτία τύπου </a>
-              <a class="dropdown-item" href="#">Δρομολόγια</a>
+              <a class="dropdown-item" href="/eam-oasa-website/prokiriksi.php">Δρομολόγια</a>
               <a class="dropdown-item" href="#">Προκυρήξεις</a>
             </div>
           </li>
@@ -104,7 +102,7 @@ echo'
               <a class="dropdown-item" href="#">Διοικητική Δομή</a>
               <a class="dropdown-item" href="#">Καταστατικό</a>
               <a class="dropdown-item" href="#">Εταιρείες ομίλου</a>
-              <a class="dropdown-item" href="#">Οργανόγραμμα</a>
+             
             </div>
           </li>
           <li class="nav-item dropdown">

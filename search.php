@@ -70,6 +70,22 @@
 					
 						echo "Τέρμα: ".$name3['name'];
 						echo "<br>";
+						echo "<br>";
+						echo "Στάσεις:";
+						echo "<br>";
+
+						$sql4 = "SELECT * FROM line_has_stop WHERE line_code = '$q'";
+						$result4 = $link->query($sql4);
+						while($name4 = $result4->fetch_array(MYSQLI_ASSOC))
+						{
+							$idFinal = $name4['stop_id'];
+							$sqlFinal = "SELECT * FROM stop WHERE id = '$idFinal'";
+							$resultFinal = $link->query($sqlFinal);
+							$nameFinal =  $resultFinal->fetch_array(MYSQLI_ASSOC);
+
+							echo $name4['number'].". ".$nameFinal['name']."<br>";
+						}
+						
 					}
 					else
 					{

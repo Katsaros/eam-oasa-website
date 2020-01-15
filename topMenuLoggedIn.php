@@ -29,7 +29,7 @@ echo'
         <a class="nav-link" href="/eam-oasa-website/platform/index.php">Προφίλ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="fortisi.php">Φόρτιση</a>
+          <a class="nav-link" href="/eam-oasa-website/platform/fortisi.php">Φόρτιση</a>
         </li>
           <li class="nav-item dropdown">
             <a

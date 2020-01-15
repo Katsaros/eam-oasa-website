@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	require_once "includes/config.php";
 ?>
 <!DOCTYPE html>
@@ -21,6 +23,10 @@
 		include 'topMenuLoggedIn.php';
 	}
 	?>
+	<ol style="background: #fff;border-bottom:2px solid black" class="breadcrumb">
+		<li class="breadcrumb-item " aria-current="page">Πληροφόρηση</li>
+		<li class="breadcrumb-item " aria-current="page">Αναζήτηση</li>
+	</ol>
 	<div class="row">
 		<div class="col-lg-3">
 		</div>

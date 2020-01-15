@@ -81,8 +81,8 @@ echo'
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="/eam-oasa-website/pressRelease.php">Δελτία τύπου </a>
-              <a class="dropdown-item" href="/eam-oasa-website/prokiriksi.php">Δρομολόγια</a>
-              <a class="dropdown-item" href="#">Προκυρήξεις</a>
+              <a class="dropdown-item" href="/eam-oasa-website/prokiriksi.php">Προκυρήξεις</a>
+              <a class="dropdown-item" href="#">Δρομολόγια</a>
             </div>
           </li>
           <li class="nav-item dropdown">
